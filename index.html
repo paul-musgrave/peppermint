@@ -8,63 +8,24 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/index.css" rel="stylesheet" />
   </head>
-  <body ng-app>
-    <div class="container-fluid">
-      <div class="row">
-          <div class="col-md-4">
+  <body ng-app="app">
+    <div class="container-fluid" ng-controller="videoCtrl">
+      <div class="row" ng-repeat="row in pitches">
+          <div class="col-md-4" ng-repeat="col in row.cols">
               <div>
                 <img src="" alt="" />
                 <div>
-                  <h3>Project Title</h3>
-                  <p>Lorum ipsem etc etc</p>
+                  <h3>{{col.title}}</h3>
+                  <p>{{col.desc}}</p>
                 </div>
               </div>
-          </div>
-          <div class="col-md-4">
-              <div>
-                <img src="" alt="" />
-                <div>
-                  <h3>Project Title</h3>
-                  <p>Lorum ipsem etc etc</p>
-                </div>
-              </div>
-          </div>
-          <div class="col-md-4">
-              <div>
-                <img src="" alt="" />
-                <div>
-                  <h3>Project Title</h3>
-                  <p>Lorum ipsem etc etc</p>
-                </div>
-              </div>
-          </div>
-      </div>
-      <div class="row">
-          <div class="col-md-4">
-
-          </div>
-          <div class="col-md-4">
-
-          </div>
-          <div class="col-md-4">
-
-          </div>
-      </div>
-      <div class="row">
-          <div class="col-md-4">
-
-          </div>
-          <div class="col-md-4">
-
-          </div>
-          <div class="col-md-4">
-
           </div>
       </div>
     </div>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.8/angular.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.15/angular-route.min.js"></script>
   <script src="js/app.js"></script>
 </html>
