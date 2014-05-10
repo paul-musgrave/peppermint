@@ -9,19 +9,8 @@
     <link href="css/index.css" rel="stylesheet" />
   </head>
   <body ng-app="app">
-    <div class="container-fluid" ng-controller="videoCtrl">
-      <div class="row" ng-repeat="row in pitches">
-          <div class="col-md-4" ng-repeat="col in row.cols">
-              <div>
-                <img src="" alt="" />
-                <div>
-                  <h3>{{col.title}}</h3>
-                  <p>{{col.desc}}</p>
-                </div>
-              </div>
-          </div>
-      </div>
-    </div>
+    <!-- <div ng-view></div> -->
+    <ng-view></ng-view>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
