@@ -17,22 +17,25 @@ window.app = angular.module('app', ['ngRoute', 'firebase'])
 				redirectTo: '/'
 			});
 	})
-	.controller('homeCtrl', function($scope) {
+	.controller('homeCtrl', function($scope, $location) {
 		$scope.thumbnailDir = 'images/video-thumbnails/';
 		$scope.pitches = [
 			{
 				cols: [
 					{
+						id: 1,
 						title: 'Project 1',
 						desc: 'A test project',
 						thumbnailUri: '1.jpg'
 					},
 					{
+						id: 2,
 						title: 'Project 2',
 						desc: 'A test project',
 						thumbnailUri: '2.jpg'
 					},
 					{
+						id: 3,
 						title: 'Project 3',
 						desc: 'A test project',
 						thumbnailUri: '3.jpg'
@@ -42,16 +45,19 @@ window.app = angular.module('app', ['ngRoute', 'firebase'])
 			{
 				cols: [
 					{
+						id: 4,
 						title: 'Project 4',
 						desc: 'A test project',
 						thumbnailUri: '4.jpg'
 					},
 					{
+						id: 5,
 						title: 'Project 5',
 						desc: 'A test project',
 						thumbnailUri: '5.jpg'
 					},
 					{
+						id: 6,
 						title: 'Project 6',
 						desc: 'A test project',
 						thumbnailUri: '6.jpg'
@@ -61,16 +67,19 @@ window.app = angular.module('app', ['ngRoute', 'firebase'])
 			{
 				cols: [
 					{
+						id: 7,
 						title: 'Project 7',
 						desc: 'A test project',
 						thumbnailUri: '7.jpg'
 					},
 					{
+						id: 8,
 						title: 'Project 8',
 						desc: 'A test project',
 						thumbnailUri: '8.jpg'
 					},
 					{
+						id: 9,
 						title: 'Project 9',
 						desc: 'A test project',
 						thumbnailUri: '9.jpg'
@@ -79,8 +88,8 @@ window.app = angular.module('app', ['ngRoute', 'firebase'])
 			}
 		];
 
-		$scope.go = function(pitch) {
-			$location.path('/rating/' + pitch)
+		$scope.go = function() {
+			$location.path('/rating/');
 		};
 	})
     .controller('ratingCtrl', function($scope, $firebase) {
