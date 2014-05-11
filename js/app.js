@@ -117,7 +117,7 @@ window.app = angular.module('app', ['ngRoute', 'firebase'])
                 responseRef.child($scope.user_id+'/userType').set($scope.userType);
             }
         });
-
+        window.s = $scope;
 
         questionsRef.on('child_added', function(ss){
          $scope.$watch('questions.'+ss.name()+'.answer', function(){
