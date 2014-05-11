@@ -11,8 +11,17 @@
   </head>
   <body>
     <div class="navbar navbar-static-top main-header">
-      <a href="/"><img src="images/peppermintlogo.png" alt="" height="150px"></a>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
+      <!-- <div class="navbar-left"> -->
+        <a href="/" id="logo"><img src="images/peppermintlogo.png" alt="" height="150px"></a>
+      <!-- </div> -->
+      <!-- <div id="loginRegisterContainer"> -->
+        <a href="#" id="signiUpModalLink" data-toggle="modal" data-target="#signUpModal">
+          <img src="images/signup.png" alt="Sign Up" />
+        </a>
+        <!-- <a href="#" data-toggle="modal" data-target="#loginModal">
+          <img src="images/login.png" alt="Login" />
+        </a> -->
+      <!-- </div> -->
     </div>
     <div ng-view></div>
     <div class="modal" tabindex="-1" role="dialog" id="signUpModal">

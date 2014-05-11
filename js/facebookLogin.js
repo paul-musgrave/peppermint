@@ -84,4 +84,7 @@ $(document).ready(function() {
 	console.log('type: ' + userType);
 
 	$('.modal').modal('hide');
+
+	$('#signiUpModalLink').remove();
+	$('#logo').after('<p style="display: inline">Welcome, '+ window['userName'] +'</p>')
 }

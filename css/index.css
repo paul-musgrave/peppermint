@@ -42,7 +42,6 @@ html, body {
 	padding-left:15px;
 }
 
-
 .questions {
 	/*margin-top: 60px;*/
 }
@@ -71,4 +70,14 @@ html, body {
 
 .mintystale {
 	width: 100px;
+}
+
+#loginRegisterContainer {
+	/*z-index: 2; 
+	width: 100%;*/
+	vertical-align: middle;
+}
+
+#loginRegisterContainer a {
+	display: inline;
 }
