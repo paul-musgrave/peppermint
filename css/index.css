@@ -1,4 +1,7 @@
 .col-md-4 {
-	border: 1px solid #f00;
 	padding: 10px;
+}
+
+.col-md-4 div {
+	background-color: #eee;
 }
