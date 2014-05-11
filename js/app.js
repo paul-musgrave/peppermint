@@ -1,8 +1,8 @@
 var FBRef = new Firebase("https://blazing-fire-4190.firebaseio.com/");
 
 window.app = angular.module('app', ['ngRoute', 'firebase'])
-	.config(function($routeProvider, $locationProvider) {
-		$locationProvider.html5Mode(true);
+    .config(function($routeProvider, $locationProvider) {
+        $locationProvider.html5Mode(true);
 
 		$routeProvider
 			.when('/', {
@@ -79,27 +79,29 @@ window.app = angular.module('app', ['ngRoute', 'firebase'])
 			}
 		];
 	})
-	.controller('ratingCtrl', function($scope, $firebase) {
-		$scope.questions = $firebase(FBRef.child('questions'));
-		$scope.comments = $firebase(FBRef.child('comments'));
-		// $scope.questions = [
-		// 	{
-		// 		text: "Question 1",
-		// 		value: ""
-		// 	},
-		// 	{
-		// 		text: "Question 2",
-		// 		value: ""
-		// 	}
-		// ];
-		// $scope.comments = [
-		// 	{
-		// 		username: "user 1",
-		// 		text: "comment 1"
-		// 	},
-		// 	{
-		// 		username: "user 2",
-		// 		text: "comment 2"
-		// 	}
-		// ];
-	});
+    .controller('ratingCtrl', function($scope, $firebase) {
+        $scope.user_id = uuid(); //#
+
+        var videoRef = FBRef.child('videos/v1'), //# v1->id
+            questionsRef = videoRef.child('questions'),
+            responseRef = videoRef.child('responses');
+
+        $scope.questions = $firebase(questionsRef);
+        $scope.comments = $firebase(videoRef.child('comments'));
+
+
+        questionsRef.on('child_added', function(ss){
+         $scope.$watch('questions.'+ss.name()+'.answer', function(){
+             if($scope.questions[ss.name()].answer){
+                 responseRef.child($scope.user_id+'/'+ss.name()).set($scope.questions[ss.name()].answer);
+             }
+         });
+        });
+    });
+
+function uuid(){
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+        return v.toString(16);
+    });
+}
