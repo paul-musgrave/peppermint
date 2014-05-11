@@ -89,21 +89,21 @@ window.app = angular.module('app', ['ngRoute', 'firebase'])
 		];
 
 		$scope.go = function(pitch) {
-			$location.url('/rating/', 1);
+			$location.url('/rating/?id=' + pitch);
 		};
 	})
-    .controller('ratingCtrl', function($scope, $firebase, $sce) {
+    .controller('ratingCtrl', function($scope, $firebase, $sce, $routeParams) {
         $scope.user_id = uuid(); //#
 
-        $scope.init = function(id) {
-        	alert(id);
-        }
-
-        var videoRef = FBRef.child('videos/v1'), //# v1->id
+        var videoRef = FBRef.child('videos/v' + $routeParams.id), //# v1->id
             questionsRef = videoRef.child('questions'),
             responseRef = videoRef.child('responses');
 
-        $scope.url = $sce.trustAsResourceUrl('https://www.youtube.com/embed/A9HV5O8Un6k');//videoRef.url;
+        videoRef.once('value', function(result) {
+        	if (result.val())
+        		$scope.url = $sce.trustAsResourceUrl(result.val().url);
+        });
+
         $scope.questions = $firebase(questionsRef);
         $scope.comments = $firebase(videoRef.child('comments'));
 
