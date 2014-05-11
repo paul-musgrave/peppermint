@@ -99,9 +99,10 @@ window.app = angular.module('app', ['ngRoute', 'firebase'])
             questionsRef = videoRef.child('questions'),
             responseRef = videoRef.child('responses');
 
-        videoRef.once('value', function(result) {
-        	if (result.val())
+        videoRef.on('value', function(result) {
+        	if (result.val()) {
         		$scope.url = $sce.trustAsResourceUrl(result.val().url);
+        	}
         });
 
         $scope.questions = $firebase(questionsRef);
