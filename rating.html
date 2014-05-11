@@ -1,45 +1,65 @@
 <div class="container">
-      <h3>[Video Title]</h3>
+      <h2 class="page-header">[Video Title]</h2>
       <div class="row">
         <div class="col-md-8">
           <!-- <div class="text-center"> -->
-            <iframe width="560" height="315" ng-src="{{url}}" frameborder="0" allowfullscreen></iframe>
+            <iframe width="640" height="390" ng-src="{{url}}" frameborder="0" allowfullscreen></iframe>
           <!-- </div> -->
         </div>
         <div class="col-md-4"></div>
       </div>
       <div class="row">
         <div class="col-md-8">
-          <iframe width="560" height="320" src="http://hack.tinj.com/embed/c/peppermint?embed=true" frameborder="0" scrolling="no"></iframe>
+          <iframe width="640" height="320" src="http://hack.tinj.com/embed/c/peppermint?embed=true" frameborder="0" scrolling="no"></iframe>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-8">
-          <div class="row">
-            <label>Name: <input type="text" ng-model="userName"></label>
-            <label>Role: <input type="text" ng-model="userType"></label>
-          </div>
-          <div class="row">
-            <div class="col-md-10"><h3>Questions</h3></div>
-            <div class="col-md-1"><h3>[Y]</h3></div>
-            <div class="col-md-1"><h3>[N]</h3></div>
-          </div>
-          <div ng-repeat="question in questions">
-            <div class="col-md-10">{{question.text}}</div>
-            <div class="col-md-1" ng-click="question.answer = 'yes'">
-              t<div ng-if="question.answer == 'yes'">[y]</div>
+
+      <div class="questions">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="row">
+              <div class="padded">
+                <div class="row">
+                  <div class="col-md-4">
+                    <label>Name: <input type="text" ng-model="userName"></label>
+                  </div>
+                  <div class="col-md-4">
+                    <label>Role: <input type="text" ng-model="userType"></label>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="col-md-1" ng-click="question.answer = 'no'">
-              t<div ng-if="question.answer == 'no'">[n]</div>
+            <div class="row">
+              <div class="col-md-10"><h3>Questions</h3></div>
+   <!--            <div class="col-md-1"><h3>[Y]</h3></div>
+              <div class="col-md-1"><h3>[N]</h3></div> -->
+            </div>
+            <div ng-repeat="question in questions">
+              <div class="row q-row">
+                <div class="col-md-10 question">{{question.text}}</div>
+                <div class="col-md-1" ng-click="question.answer = 'yes'">
+                  <div ng-if="question.answer != 'yes'"><img src="images/CheckGreenGrey.png" alt=""></div>
+                  <div ng-if="question.answer == 'yes'"><img src="images/CheckGreen.png" alt=""></div>
+                </div>
+                <div class="col-md-1" ng-click="question.answer = 'no'">
+                  <div ng-if="question.answer != 'no'"><img src="images/CheckNoGrey.png" alt=""></div>
+                  <div ng-if="question.answer == 'no'"><img src="images/CheckNo.png" alt=""></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
       <div class="row">
-        <h3>Comments</h3>
-        <div ng-repeat="comment in comments">
-          <h6>{{comment.username}}</h6>
-          {{comment.comment}}
+        <div class="padded">
+          <h3>Comments</h3>
+          <div ng-repeat="comment in comments">
+            <div class="row c-row">
+              <h6 class="username">{{comment.username}}</h6>
+              {{comment.comment}}
+            </div>
+          </div>
         </div>
       </div>
 

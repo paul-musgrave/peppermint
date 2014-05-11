@@ -37,3 +37,25 @@ html, body {
 	height: 150px;
 	background-color: #9CFFFF
 }
+
+.padded {
+	padding-left:15px;
+}
+
+
+.questions {
+	margin-top: 60px;
+}
+.question {
+	font-size: 125%;
+}
+.q-row {
+	padding-top: 5px;
+}
+
+.c-row {
+	padding-left: 15px;
+}
+.username {
+	margin-bottom: 0;
+}
