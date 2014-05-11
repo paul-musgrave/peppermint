@@ -134,6 +134,13 @@ window.app = angular.module('app', ['ngRoute', 'firebase'])
         });
     })
     .controller('analysisCtrl', function($scope, $firebase, $sce, $routeParams) {
+        
+        var videoRef = FBRef.child('videos/v1'), //# v1->id
+            questionsRef = videoRef.child('questions'),
+            responseRef = videoRef.child('responses');
+
+        $scope.comments = $firebase(videoRef.child('comments'));
+
         $scope.$on("$routeChangeSuccess", initAnalysis);
     });
 

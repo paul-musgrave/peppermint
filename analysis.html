@@ -1,18 +1,49 @@
 <div class="container">
+    <h2 class="page-header">Your Fresh Feedback</h2>
     <div class="row">
         <div class="col-md-6">
-            <div id="views-time" class="chart-block"><svg></svg></div>
-        </div>
-        <div class="col-md-6">
+            <h3>Survey Results</h3>
             <div id="bar" class="chart-block"><svg></svg></div>
         </div>
+        <div class="col-md-6">
+            <h3>Interest Curve</h3>
+            <!-- <div id="views-time" class="chart-block"><svg></svg></div> -->
+            <iframe height="280" width="555" src="http://hack.tinj.com/embed/c/peppermintdata" frameborder="0"></iframe>
+        </div>
     </div>
     <div class="row">
-        <div class="col-md-6"></div>
-        <div class="col-md-6"></div>
-    </div>
-    <div class="row">
-        <div class="col-md-6"></div>
-        <div class="col-md-6"></div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Previous Version</h3>
+                    <div class="row">
+                        <div class="col-md-6"><img class="mintystale" src="images/stale.png"></div>
+                        <div class="col-md-6">
+                            <h1 style="text-size: 50px;">42%</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3>Current Version</h3>
+                    <div class="row">
+                        <div class="col-md-6"><img class="mintystale" src="images/Minty.png"></div>
+                        <div class="col-md-6">
+                            <h1 style="text-size: 50px;">86%</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="col-md-6">
+                <h2>Top Comments</h2>
+                  <div ng-repeat="comment in comments">
+                    <div class="row c-row">
+                      <h6 class="username">{{comment.username}}</h6>
+                      {{comment.comment}}
+                    </div>
+                  </div>
+            </div>
+        </div>
     </div>
 </div>

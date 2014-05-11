@@ -44,7 +44,7 @@ html, body {
 
 
 .questions {
-	margin-top: 60px;
+	/*margin-top: 60px;*/
 }
 .question {
 	font-size: 125%;
@@ -67,4 +67,8 @@ html, body {
 }
 .chart-block > svg {
 	height: 300px;
+}
+
+.mintystale {
+	width: 100px;
 }
