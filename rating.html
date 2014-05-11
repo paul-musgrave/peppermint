@@ -5,7 +5,9 @@
       <h3>[Video Title]</h3>
       <div class="row">
         <div class="col-md-8">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/A9HV5O8Un6k" frameborder="0" allowfullscreen></iframe>
+          <!-- <div class="text-center"> -->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/A9HV5O8Un6k" frameborder="0" allowfullscreen></iframe>
+          <!-- </div> -->
         </div>
         <div class="col-md-4"></div>
       </div>
@@ -21,13 +23,21 @@
           </div>
           <div ng-repeat="question in questions">
             <div class="col-md-10">{{question.text}}</div>
-            <div class="col-md-1"><div ng-if="question.value == 'yes'">[y]</div></div>
-            <div class="col-md-1"><div ng-if="question == 'no'">[n]</div></div>
+            <div class="col-md-1" ng-click="question.value = 'yes'">
+              t<div ng-if="question.value == 'yes'">[y]</div>
+            </div>
+            <div class="col-md-1" ng-click="question.value = 'no'">
+              t<div ng-if="question.value == 'no'">[n]</div>
+            </div>
           </div>
         </div>
       </div>
       <div class="row">
         <h3>Comments</h3>
+        <div ng-repeat="comment in comments">
+          <h6>{{comment.username}}</h6>
+          {{comment.text}}
+        </div>
       </div>
 
     </div>
