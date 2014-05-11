@@ -18,23 +18,24 @@ window.app = angular.module('app', ['ngRoute', 'firebase'])
 			});
 	})
 	.controller('homeCtrl', function($scope) {
+		$scope.thumbnailDir = 'images/video-thumbnails/';
 		$scope.pitches = [
 			{
 				cols: [
 					{
 						title: 'Project 1',
 						desc: 'A test project',
-						thumbnailUri: ''
+						thumbnailUri: '1.jpg'
 					},
 					{
 						title: 'Project 2',
 						desc: 'A test project',
-						thumbnailUri: ''
+						thumbnailUri: '2.jpg'
 					},
 					{
 						title: 'Project 3',
 						desc: 'A test project',
-						thumbnailUri: ''
+						thumbnailUri: '3.jpg'
 					}
 				]
 			},
@@ -43,17 +44,17 @@ window.app = angular.module('app', ['ngRoute', 'firebase'])
 					{
 						title: 'Project 4',
 						desc: 'A test project',
-						thumbnailUri: ''
+						thumbnailUri: '4.jpg'
 					},
 					{
 						title: 'Project 5',
 						desc: 'A test project',
-						thumbnailUri: ''
+						thumbnailUri: '5.jpg'
 					},
 					{
 						title: 'Project 6',
 						desc: 'A test project',
-						thumbnailUri: ''
+						thumbnailUri: '6.jpg'
 					}
 				]
 			},
@@ -62,17 +63,17 @@ window.app = angular.module('app', ['ngRoute', 'firebase'])
 					{
 						title: 'Project 7',
 						desc: 'A test project',
-						thumbnailUri: ''
+						thumbnailUri: '7.jpg'
 					},
 					{
 						title: 'Project 8',
 						desc: 'A test project',
-						thumbnailUri: ''
+						thumbnailUri: '8.jpg'
 					},
 					{
 						title: 'Project 9',
 						desc: 'A test project',
-						thumbnailUri: ''
+						thumbnailUri: '9.jpg'
 					}
 				]
 			}
