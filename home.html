@@ -1,5 +1,5 @@
 <div class="container-fluid center-block">
-  <div class="row" ng-repeat="row in pitches">
+  <div class="row p-row" ng-repeat="row in pitches">
     <div class="col-md-4" ng-repeat="col in row.cols">
       <div class="pitch-preview" ng-click="go(col.id)">
         <img src="{{thumbnailDir + col.thumbnailUri}}" alt="{{$index}}" />
