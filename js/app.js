@@ -2,7 +2,6 @@ var FBRef = new Firebase("https://blazing-fire-4190.firebaseio.com/");
 
 window.app = angular.module('app', ['ngRoute', 'firebase'])
     .config(function($routeProvider, $locationProvider) {
-        $locationProvider.html5Mode(true);
 
         $routeProvider
             .when('/', {
