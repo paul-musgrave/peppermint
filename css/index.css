@@ -59,3 +59,12 @@ html, body {
 .username {
 	margin-bottom: 0;
 }
+
+.chart-block {
+	display:block;
+	/*height: 400px;
+	widows: 600px;*/
+}
+.chart-block > svg {
+	height: 300px;
+}
