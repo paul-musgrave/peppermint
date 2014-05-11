@@ -13,6 +13,10 @@ window.app = angular.module('app', ['ngRoute', 'firebase'])
                 controller: 'ratingCtrl',
                 templateUrl: 'rating.html'
             })
+            .when('/analysis', {
+                controller: 'analysisCtrl',
+                templateUrl: 'analysis.html'
+            })
             .otherwise({
                 redirectTo: '/'
             });
@@ -128,6 +132,9 @@ window.app = angular.module('app', ['ngRoute', 'firebase'])
              }
          });
         });
+    })
+    .controller('analysisCtrl', function($scope, $firebase, $sce, $routeParams) {
+        $scope.$on("$routeChangeSuccess", initAnalysis);
     });
 
 function uuid(){
