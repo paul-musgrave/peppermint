@@ -23,11 +23,11 @@
           </div>
           <div ng-repeat="question in questions">
             <div class="col-md-10">{{question.text}}</div>
-            <div class="col-md-1" ng-click="question.value = 'yes'">
-              t<div ng-if="question.value == 'yes'">[y]</div>
+            <div class="col-md-1" ng-click="question.answer = 'yes'">
+              t<div ng-if="question.answer == 'yes'">[y]</div>
             </div>
-            <div class="col-md-1" ng-click="question.value = 'no'">
-              t<div ng-if="question.value == 'no'">[n]</div>
+            <div class="col-md-1" ng-click="question.answer = 'no'">
+              t<div ng-if="question.answer == 'no'">[n]</div>
             </div>
           </div>
         </div>
