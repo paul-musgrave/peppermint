@@ -88,17 +88,22 @@ window.app = angular.module('app', ['ngRoute', 'firebase'])
 			}
 		];
 
-		$scope.go = function() {
-			$location.path('/rating/');
+		$scope.go = function(pitch) {
+			$location.url('/rating/', 1);
 		};
 	})
-    .controller('ratingCtrl', function($scope, $firebase) {
+    .controller('ratingCtrl', function($scope, $firebase, $sce) {
         $scope.user_id = uuid(); //#
+
+        $scope.init = function(id) {
+        	alert(id);
+        }
 
         var videoRef = FBRef.child('videos/v1'), //# v1->id
             questionsRef = videoRef.child('questions'),
             responseRef = videoRef.child('responses');
 
+        $scope.url = $sce.trustAsResourceUrl('https://www.youtube.com/embed/A9HV5O8Un6k');//videoRef.url;
         $scope.questions = $firebase(questionsRef);
         $scope.comments = $firebase(videoRef.child('comments'));
 
