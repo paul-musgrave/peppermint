@@ -81,3 +81,8 @@ html, body {
 #loginRegisterContainer a {
 	display: inline;
 }
+
+#userMessage {
+	display: inline;
+	font-weight: bold;
+}

@@ -86,5 +86,5 @@ $(document).ready(function() {
 	$('.modal').modal('hide');
 
 	$('#signiUpModalLink').remove();
-	$('#logo').after('<p style="display: inline">Welcome, '+ window['userName'] +'</p>')
+	$('#logo').after('<h3 id="userMessage">'+ window['userName'] +'</h3>')
 }

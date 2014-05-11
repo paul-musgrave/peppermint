@@ -25,7 +25,7 @@
     </div>
     <div ng-view></div>
     <div class="modal" tabindex="-1" role="dialog" id="signUpModal">
-      <div class="modal-dialog modal-lg">
+      <div class="modal-dialog modal-sm">
         <div class="modal-content">
           <div class="modal-header">
               <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
@@ -47,6 +47,7 @@
         <p>Thanks! You're now registered with Peppermint via your Facebook account.</p>
         <p>To help us personalize your experience, please choose which category of user you best fit in to:</p>
         <select id="userTypeSelect">
+          <option value="developer">Developer</option>
           <option value="investor">Investor</option>
           <option value="other">Other</option>
         </select>
