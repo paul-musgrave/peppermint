@@ -78,6 +78,10 @@ window.app = angular.module('app', ['ngRoute', 'firebase'])
 				]
 			}
 		];
+
+		$scope.go = function(pitch) {
+			$location.path('/rating/' + pitch)
+		};
 	})
 	.controller('ratingCtrl', function($scope, $firebase) {
 		$scope.questions = $firebase(FBRef.child('questions'));
