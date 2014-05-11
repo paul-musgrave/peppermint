@@ -1,12 +1,9 @@
 <div class="container">
-      <div class="header">
-        <h1>Peppermint</h1>
-      </div>
       <h3>[Video Title]</h3>
       <div class="row">
         <div class="col-md-8">
           <!-- <div class="text-center"> -->
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/A9HV5O8Un6k" frameborder="0" allowfullscreen></iframe>
+            <iframe width="560" height="315" ng-src="{{url}}" frameborder="0" allowfullscreen></iframe>
           <!-- </div> -->
         </div>
         <div class="col-md-4"></div>
@@ -18,6 +15,10 @@
       </div>
       <div class="row">
         <div class="col-md-8">
+          <div class="row">
+            <label>Name: <input type="text" ng-model="userName"></label>
+            <label>Role: <input type="text" ng-model="userType"></label>
+          </div>
           <div class="row">
             <div class="col-md-10"><h3>Questions</h3></div>
             <div class="col-md-1"><h3>[Y]</h3></div>
@@ -38,7 +39,7 @@
         <h3>Comments</h3>
         <div ng-repeat="comment in comments">
           <h6>{{comment.username}}</h6>
-          {{comment.text}}
+          {{comment.comment}}
         </div>
       </div>
 
