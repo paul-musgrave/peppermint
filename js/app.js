@@ -102,6 +102,7 @@ window.app = angular.module('app', ['ngRoute', 'firebase'])
         videoRef.on('value', function(result) {
         	if (result.val()) {
         		$scope.url = $sce.trustAsResourceUrl(result.val().url);
+                $scope.pitchTitle = result.val().title;
         	}
         });
 
