@@ -6,6 +6,13 @@ window.app = angular.module('app', ['ngRoute'])
 			.when('/', {
 			    controller: 'homeCtrl',
 			    templateUrl: 'home.html'
+			})
+			.when('/rating', {
+			    controller: 'ratingCtrl',
+			    templateUrl: 'rating.html'
+			})
+			.otherwise({
+				redirectTo: '/'
 			});
 	})
 	.controller('homeCtrl', function($scope) {
@@ -66,6 +73,18 @@ window.app = angular.module('app', ['ngRoute'])
 						thumbnailUri: ''
 					}
 				]
+			}
+		];
+	})
+	.controller('ratingCtrl', function($scope) {
+		$scope.questions = [
+			{
+				text: "Question 1",
+				value: ""
+			},
+			{
+				text: "Question 2",
+				value: ""
 			}
 		];
 	});

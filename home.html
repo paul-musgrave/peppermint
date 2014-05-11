@@ -1,13 +1,14 @@
 <div class="container-fluid">
-      <div class="row" ng-repeat="row in pitches">
-          <div class="col-md-4" ng-repeat="col in row.cols">
-              <div>
-                <img src="" alt="" />
-                <div>
-                  <h3>{{col.title}}</h3>
-                  <p>{{col.desc}}</p>
-                </div>
-              </div>
+  <a href="/rating">Rating</a>
+  <div class="row" ng-repeat="row in pitches">
+      <div class="col-md-4" ng-repeat="col in row.cols">
+          <div>
+            <img src="" alt="" />
+            <div>
+              <h3>{{col.title}}</h3>
+              <p>{{col.desc}}</p>
+            </div>
           </div>
       </div>
-    </div>
+  </div>
+</div>
